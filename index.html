@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" scr="style.css">
+    <script src="script.js"></script>
+ <style>
+    body{
+      background-color: darkblue;
+      background-image: url(2.jpg);
+    }
+  
+      .slider-container {
+        position: left;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        height: 50px;
+        border-radius: 30px;
+      }
+  
+      .slider-button {
+        background-color: blue; /* Set your desired background color */
+        color: rgb(172, 26, 26);
+        border: none;
+        padding: 15px;
+        text-align: left;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 30px;
+      }
+  
+      .slider-icon {
+        width: 30px;
+        height: 3px;
+        background-color: wheat;
+        margin: 6px 0;
+        transition: 0.5s;
+      }
+  
+      .slider-content {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Initially off-screen */
+        height: 100%;
+        width: 250px;
+        background-color: blue; /* Set your desired background color */
+        padding-top: 50px;
+        transition: 0.5s;
+        z-index: 999;
+      }
+  
+      .slider-content a {
+        padding: 15px;
+        text-decoration: left;
+        font-size: 18px;
+        color: white;
+        display: block;
+        text-align: left;
+      }
+      .background-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+  color: #180303;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+select{
+padding-bottom: 2%;
+color: black;
+background-color: gold;
+text-align: center;
+border-radius: 20px;
+font-size: 27px;
+width: 400px;
+}
+input{
+padding-bottom: 2%;
+color: black;
+background-color: gold;
+margin-bottom: 1.1%;
+text-align: center;
+border-radius: 20px;
+font-size: 28px;
+}
+h1{
+text-align: center;
+font-style: italic;
+align-items: center;
+}
+c
+div{
+color: #000;
+background-color: yellowgreen;
+align-content: left;
+}
+form{
+  text-align: center;
+  max-width: 400px;
+ max-height: 800px;
+ margin: 20px auto;
+ padding: 20px;
+ background-color: green;
+ backgroundimage: url(10.jpg);
+ border-radius: 30px ;
+ border-color: #0a2966;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ border: red dotted 0.5px;
+}
+
+button[type="submit"] {
+  background-color: #4569a0;
+  color: black;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 20px 20px;
+  border: none;
+  width: 70%;
+  margin-left: auto;
+  border-radius: 18px;
+  font-size: 20px;
+  } 
+button:hover{
+background-color: darkred;
+color: rgb(211, 155, 0);
+cursor:pointer;
+border-bottom-right-radius: right;
+text-align: right;
+}
+ .logo { 
+            color: rgb(243, 238, 238);
+            font-style: initial;
+        }
+        
+        .move{
+            display: inline;
+            display: inline-block; 
+            margin-left: 5px; 
+            vertical-align: 50px;
+        }
+
+    #slider-container {
+      width:fit-content;
+      margin: fit-content;
+      overflow: auto;
+      align-items: center;
+    }
+
+    #slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+.slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    img {
+      width: auto-fit;
+      height: fixed-content;
+    }
+
+    #prev, #next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: #31cf11;
+      background-color: #333;
+      border: none;
+      padding: 10px;
+      outline: none;
+    }
+
+    #prev {
+      left: 10px;
+    }
+
+    #next {
+      right: 10px;
+    }
+
+ </style>
+</head>
+<body>
+  <button class="slider-button" onclick="toggleSlider()">
+    <div class="slider-icon"></div>
+    <div class="slider-icon"></div>
+    <div class="slider-icon"></div>
+    <div class="slider-icon"></div>
+    </button>
+    </div>
+    
+    <div class="slider-content">
+    <a href="index.html" onclick="go('Home')">home page</a>
+    <a href="contact" onclick="go('contact')">Contact Us</a>
+    <a href="about us" onclick="go('about')">About Us</a>
+    <a href="privacy policy" onclick="go('privacy')">Privacy Policy</a>
+    </div>
+
+  <div class="background-container">
+    <div class="color-layer" id="layer1"></div>
+    <div class="color-layer" id="layer2"></div>
+    <div class="content">
+      <header>
+        <h1>REGISTRATION FORM </h1>
+        </header>
+    
+        <form action="#" method="post" onsubmit="return validateForm()">
+            <label for="Full_Name">Full Name:</label>
+            <input type="text" id="Full_Name" name="Full_Name" placeholder="Full_Name" required pattern="[a-zA-Z]+ [a-zA-Z]+"><br>
+    
+    
+            <label for="regNumber">Registration Number:</label>
+            <input type="text" id="regNumber" name="regNumber" placeholder="BCS-00-0000-0000" required pattern="BCS-[0-9]{2}-[0-9]{4}-[0-9]{4}"><br>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="user@gmail.com" required><br>
+            <label for="phone_no">Phone_No</label>
+            <input type="tel" id="Phone_No" name="Phone_No" placeholder="+255_000_000_0000" necessary><br>
+    
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
+    
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required><br>
+    
+            <label for="gender">Sex:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>
+    
+            <label for="region">Region:</label>
+            <select id="region" name="region" onchange="loadDistricts()">
+                <option value="" disabled selected>Select your region</option>
+            </select><br>
+    
+            <label for="district">District:</label>
+            <select id="district" name="district" required>
+                <option value="" disabled selected>Select your district</option>
+            </select><br>
+    
+            <button type="submit">Register</button> 
+        </form>
+      </div>
+    </div>
+    
+    <div id="slider-container">
+      <div id="slider">
+        <div class="slide"><img src="2.jpg" alt="Slide 2"></div>
+        <div class="slide"><img src="10.jpg" alt="Slide 3"></div>
+        </div>
+    </div>
+    <button id="prev" onclick="prevSlide">&#10094;</button>
+  <button id="next" onclick="nextSlide">&#10095;</button>
+  
+    <footer style="color: rgb(94, 255, 0); background-color: black; width: 100%; padding: 20px;">
+        <p>Web Development &copy; 2023 All right reserved</p>
+    </footer>
+  <script>
+    function validateForm() {
+    var fullName = document.getElementById('fullName').value;
+    var regNumber = document.getElementById('regNumber').value;
+    var gender = document.getElementById('gender').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Simple validation for full name format (alphabets and space)
+    var nameRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+
+    // Validation for registration number format (BCS-00-0000-0000)
+    var regNumberRegex = /^BCS-[0-9]{2}-[0-9]{4}-[0-9]{4}$/;
+
+    // Validation for email format
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Password criteria: Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character
+    var passwordRegex = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+
+    if (!nameRegex.test(fullName)) {
+        alert('Please enter a valid full name with alphabets and space.');
+        return false;
+    }
+
+    if (!regNumberRegex.test(regNumber)) {
+        alert('Please enter a valid registration number in the format BCS-00-0000-0000.');
+        return false;
+    }
+
+    if (gender === "") {
+        alert('Please select your gender.');
+        return false;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+    }
+
+    if (!passwordRegex.test(password)) {
+        alert('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.');
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert('Password and Confirm Password do not match.');
+        return false;
+    }
+
+    return true;
+}
+
+// Simulated data for regions and districts
+var regionsData = [
+    { id: 1, name: 'Arusha' },
+    { id: 2, name: 'Dar es Salaam' },
+    { id: 3, name: 'Dodoma' },
+    { id: 4, name: 'Geita' },
+    { id: 5, name: 'Iringa' },
+    { id: 6, name: 'Kagera' },
+    { id: 7, name: 'Katavi' },
+    { id: 8, name: 'Kigoma' },
+    { id: 9, name: 'Kilimanjaro' },
+    { id: 10, name: 'Lindi' },
+    { id: 11, name: 'Manyara' },
+    { id: 12, name: 'Mara' },
+    { id: 13, name: 'Mbeya' },
+    { id: 14, name: 'Morogoro' },
+    { id: 15, name: 'Mtwara' },
+    { id: 16, name: 'Mwanza' },
+    { id: 17, name: 'Njombe' },
+    { id: 18, name: 'Pemba Kaskazini' },
+    { id: 19, name: 'Pemba Kusini' },
+    { id: 20, name: 'Pwani' },
+    { id: 21, name: 'Rukwa' },
+    { id: 22, name: 'Ruvuma' },
+    { id: 23, name: 'Shinyanga' },
+    { id: 24, name: 'Simiyu' },
+    { id: 25, name: 'Singida' },
+    { id: 26, name: 'Songwe' },
+    { id: 27, name: 'Tabora' },
+    { id: 28, name: 'Tanga' },
+    { id: 29, name: 'Unguja Kaskazini' },
+    { id: 30, name: 'Unguja Kusini' }
+];
+
+var districtsData = {
+    1: ['Arusha Mjini', 'Arusha Vijijini', 'Meru'],
+    2: ['Ilala', 'Kinondoni', 'Temeke', 'Kigamboni'],
+    3: [ 'Dodoma mjini','bahi','chamwino','chemba','kondoa','kongwa','mpwapwa'],
+    4: ['Bukombe', 'Chato', 'Geita Mjini'],
+    5: ['Iringa Mjini', 'Iringa Vijijini', 'Kilolo', 'Mafinga', 'Mufindi'],
+    6: ['Biharamulo', 'Bukoba Mjini', 'Bukoba Vijijini', 'Karagwe', 'Kyela', 'Missenyi', 'Muleba', 'Ngara'],
+    7: ['Mlele', 'Mpanda Mjini', 'Mpanda Vijijini'],
+    8: ['Buhigwe', 'Kakonko', 'Kasulu Mjini', 'Kasulu Vijijini', 'Kibondo', 'Kigoma Mjini', 'Kigoma Vijijini', 'Uvinza'],
+    9: ['Hai', 'Moshi Mjini', 'Moshi Vijijini', 'Mwanga', 'Rombo', 'Siha'],
+    10: ['Kilwa', 'Lindi Mjini', 'Lindi Vijijini', 'Liwale', 'Nachingwea', 'Ruangwa'],
+    11: ['Babati Mjini', 'Babati Vijijini', 'Hanang', 'Kiteto', 'Mbulu', 'Simanjiro'],
+    12: ['Bunda', 'Butiama', 'Musoma Mjini', 'Musoma Vijijini', 'Rorya', 'Serengeti', 'Tarime'],
+    13: ['Busokelo', 'Chunya', 'Kyela', 'Mbarali', 'Mbeya Mjini', 'Mbeya Vijijini', 'Rungwe'],
+    14: ['Gairo', 'Kilombero', 'Kilosa', 'Morogoro Mjini', 'Morogoro Vijijini', 'Mvomero', 'Ulanga', 'Malinyi'],
+    15: ['Masasi Mjini', 'Masasi Vijijini', 'Mtwara Mjini', 'Mtwara Vijijini', 'Nanyumbu', 'Newala'],
+    16: ['Ilemela', 'Kwimba', 'Magu', 'Misungwi', 'Nyamagana', 'Sengerema', 'Ukerewe'],
+    17: ['Ludewa', 'Makambako', 'Makete', 'Njombe Mjini', 'Njombe Vijijini', 'Wanging’ombe'],
+    18: ['Micheweni', 'Wete'],
+    19: ['Chake Chake', 'Mkoani'],
+    20: ['Bagamoyo', 'Kibaha Mjini', 'Kibaha Vijijini', 'Kisarawe', 'Mafia', 'Mkuranga', 'Rufiji'],
+    21: ['Kalambo', 'Nkasi', 'Sumbawanga Mjini', 'Sumbawanga Vijijini'],
+    22: ['Mbinga', 'Namtumbo', 'Songea Mjini', 'Songea Vijijini', 'Tunduru','Nyasa'],
+    23: ['Kahama Mjini', 'Kahama Vijijini', 'Kishapu', 'Shinyanga Mjini', 'Shinyanga Vijijini'],
+    24: ['Bariadi', 'Busega', 'Itilima', 'Maswa', 'Meatu'],
+    25: ['Iramba', 'Manyoni', 'Singida Mjini', 'Singida Vijijini'],
+    26: ['Ileje', 'Ileje', 'Mbozi', 'Momba'],
+    27: ['Igunga', 'Kaliua', 'Nzega', 'Sikonge', 'Tabora Mjini', 'Urambo', 'Uyui'],
+    28: ['Handeni Mjini', 'Handeni Vijijini', 'Kilindi', 'Korogwe Mjini', 'Korogwe Vijijini', 'Lushoto', 'Muheza', 'Pangani'],
+    29: ['Kaskazini A', 'Kaskazini B'],
+    30: ['Kusini A', 'Kusini B']
+};
+
+// Function to populate options for the regions dropdown
+function loadRegions() {
+    var regionSelect = document.getElementById('region');
+    regionSelect.innerHTML = '<option value="" disabled selected>Select your region</option>';
+
+    regionsData.forEach(function(region) {
+        var option = document.createElement('option');
+        option.value = region.id;
+        option.text = region.name;
+        regionSelect.add(option);
+    });
+}
+
+// Function to populate options for the districts dropdown based on the selected region
+function loadDistricts() {
+    var regionSelect = document.getElementById('region');
+    var districtSelect = document.getElementById('district');
+    var selectedRegionId = regionSelect.value;
+
+    districtSelect.innerHTML = '<option value="" disabled selected>Select your district</option>';
+
+    if (selectedRegionId && districtsData[selectedRegionId]) {
+        districtsData[selectedRegionId].forEach(function(district) {
+            var option = document.createElement('option');
+            option.value = district;
+            option.text = district;
+            districtSelect.add(option);
+        });
+    }
+}
+
+// Function to initialize the form with regions
+function initializeForm() {
+    loadRegions();
+    loadDistricts(); // Initial loading of districts based on the default selected region (if any)
+}
+
+// Initialize the form when the page loads
+window.onload = initializeForm;
+
+
+
+
+$(document).ready(function(){
+$('.slider').slick({
+    autoplay: true,
+    autoplaySpeed: 3000,
+    dots: true,
+    arrows: true,
+});
+});
+
+
+// Add JavaScript for responsive navigation toggle here
+document.querySelector('.menu-icon').addEventListener('click', function () {
+document.querySelectorAll('nav a:not(.menu-icon)').forEach(function (link) {
+link.style.display = link.style.display === 'none' ? 'block' : 'none';
+});
+});
+
+
+document.querySelector('.menu-icon').addEventListener('click', function () {
+document.querySelectorAll('nav a:not(.menu-icon)').forEach(function (link) {
+link.classList.toggle('show-links');
+});
+});
+
+document.body.addEventListener('click', function (event) {
+if (!event.target.closest('nav')) {
+document.querySelectorAll('nav a:not(.menu-icon)').forEach(function (link) {
+    link.classList.remove('show-links');
+});
+}
+});
+
+
+document.querySelector('.menu-icon').addEventListener('click', function () {
+document.querySelectorAll('nav a:not(.menu-icon)').forEach(function (link) {
+link.classList.toggle('show-links');
+});
+});
+
+document.body.addEventListener('click', function (event) {
+if (!event.target.closest('nav')) {
+document.querySelectorAll('nav a:not(.menu-icon)').forEach(function (link) {
+    link.classList.remove('show-links');
+});
+}
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const layer1 = document.getElementById("layer1");
+    const layer2 = document.getElementById("layer2");
+  
+    // Function to toggle background colors
+    function toggleBackground() {
+      layer1.style.opacity = 1 - layer1.style.opacity;
+      layer2.style.opacity = 1 - layer2.style.opacity;
+    }
+  
+    // Toggle background colors every 3 seconds (adjust as needed)
+    setInterval(toggleBackground, 3000);
+  });
+
+  function toggleSlider() {
+    var sliderContent = document.querySelector('.slider-content');
+    if (sliderContent.style.left == "0px") {
+      sliderContent.style.left = "-250px";
+    } else {
+      sliderContent.style.left = "0px";
+    }
+    }
+    
+    function navigate(page) {
+    // You can add logic here to navigate to the respective pages or perform actions
+    alert("go to " + page);
+    }
+
+    let currentSlide = 0;
+        
+        function showSlide(index) {
+          const slider = document.getElementById('slider');
+          const slides = document.getElementsByClassName('slide');
+      
+          if (index >= slides.length) {
+            currentSlide = 0;
+          } else if (index < 0) {
+            currentSlide = slides.length - 1;
+          } else {
+            currentSlide = index;
+          }
+      
+          const offset = -currentSlide * 100 + '%';
+          slider.style.transform = `translateX(${offset})`;
+        }
+      
+        function nextSlide() {
+          showSlide(currentSlide + 1);
+        }
+      
+        function prevSlide() {
+          showSlide(currentSlide - 1);
+        }
+      
+        // Auto play the slider
+        setInterval(nextSlide , 3000);
+     
+
+    </script>
+     <!-- Your website content goes here -->
+
+</body>
+</html>

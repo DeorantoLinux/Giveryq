@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu List</title>
+  <style>
+    ul.menu {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.menu li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    ul.menu li a {
+      text-decoration: none;
+      color: #000;
+      padding: 5px;
+    }
+
+    ul.menu li a:hover {
+      background-color: gold;
+    }
+  </style>
+</head>
+<body style="background-color: aqua;">
+  <ul class="menu">
+    <li><a href="index.html">Back to register</a></li><br>
+    <li><a href="about us">About</a></li><br>
+    <li><a href="privacy policy">privacy policy</a></li><br>
+    <li><a href="contact">Contact us</a></li><br>
+  </ul>
+</body>
+<footer style="color: rgb(44, 223, 21); background-color: black; width: 100%; padding: 20px;">
+    <p>Web Development &copy; 2023 All right reserved</p>
+
+</html>
+
+
+
